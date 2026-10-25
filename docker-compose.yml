@@ -1,0 +1,17 @@
+services:
+  sea-turtle-web-service:
+    image: ${DOCKER_IMAGE}:${DOCKER_TAG}
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+      SERVER_PORT: ${SERVER_PORT}
+    volumes:
+      - /wp-content/uploads:/wp-content/uploads
+    networks:
+      - sea-turtle-network
+
+networks:
+  sea-turtle-network:
+    external: true

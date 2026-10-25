@@ -1,0 +1,2 @@
+ALTER TABLE post DROP COLUMN keyword;
+ALTER TABLE post DROP COLUMN title_seo;

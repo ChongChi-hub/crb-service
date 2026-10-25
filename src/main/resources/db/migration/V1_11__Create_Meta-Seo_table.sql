@@ -1,0 +1,21 @@
+CREATE TABLE meta_seo (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    entity_id BIGINT NOT NULL,                        
+    entity_type VARCHAR(100) NOT NULL,                 
+    meta_title VARCHAR(255) NULL,                      
+    meta_description VARCHAR(500) NULL,                
+    meta_keywords VARCHAR(500) NULL,                   
+    canonical_url VARCHAR(1000) NULL,                  
+    robots VARCHAR(100) NULL DEFAULT 'index, follow',  
+    og_title VARCHAR(255) NULL,                        
+    og_description VARCHAR(500) NULL,                  
+    og_image VARCHAR(1000) NULL,                       
+    og_type VARCHAR(100) NULL DEFAULT 'website',       
+    twitter_card VARCHAR(100) NULL DEFAULT 'summary_large_image',
+    twitter_title VARCHAR(255) NULL,                   
+    twitter_description VARCHAR(500) NULL,             
+    twitter_image VARCHAR(1000) NULL,                  
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY uk_entity (entity_id, entity_type)
+);
